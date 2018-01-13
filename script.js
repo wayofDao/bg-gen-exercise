@@ -5,17 +5,8 @@ var body = document.getElementById("gradient");
 var btn = document.querySelector("#lucky");
 var randomColor = [];
 
-window.onload = pageLoadedReadyToGo;
+window.onload = setGradien; // once the window is completely loaded it will execute this function
 
-function pageLoadedReadyToGo() {
-	setGradient();
-}
-
-
-
-console.log(css);
-console.log(color1);
-console.log(color2);
 function setGradient() {
 	body.style.background = "linear-gradient(to right, " + 
 	color1.value + ", " + color2.value + ")";
@@ -23,15 +14,16 @@ function setGradient() {
 	css.textContent = body.style.background + ";";
 }
 
-// this function will randomly generate 6 numbers 0-255 and push 
-//them to randomColor array and call the surprise function which will do the trick
+// this function will randomly generate 6 numbers 0-255 as for rgB(0-255, 0-255,0-255) and push 
+//them to randomColor array then it will call the applyRandomColor
 function createRandomColor(){
 	while (randomColor.length <= 6) {
 		randomColor.push(Math.floor(Math.random()*256));
 	}
-	surpriseMe();
+	applyRandomColor();
 }
-function surpriseMe() {
+//this function will implement randomColor array to background: linear-gradient
+function applyRandomColor() {
 	
 	body.style.background = "linear-gradient(to right, " +
 	"rgb(" + randomColor[0] + ", " + randomColor[1] +
