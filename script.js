@@ -5,7 +5,7 @@ var body = document.getElementById("gradient");
 var btn = document.querySelector("#lucky");
 var randomColor = [];
 
-window.onload = setGradien; // once the window is completely loaded it will execute this function
+window.onload = setGradient; // once the window is completely loaded it will execute this function
 
 function setGradient() {
 	body.style.background = "linear-gradient(to right, " + 
